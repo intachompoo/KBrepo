@@ -27,14 +27,14 @@
     oc create -f scc-hostpath.yaml
 
 ## Add the "allowHostDirVolumePlugin" privilege to this security-context:
-Run:
-   - oc patch scc scc-hostpath -p '{"allowHostDirVolumePlugin": true}'
+#### Run
+    oc patch scc scc-hostpath -p '{"allowHostDirVolumePlugin": true}'
 
 ## Associate the pod's service account with the above security context
-Run:
-   - oc adm policy add-scc-to-user scc-hostpath system:serviceaccount:<service_account_name>
-### or
-   - oc adm policy add-scc-to-group hostpath system:authenticated
+#### Run
+    oc adm policy add-scc-to-user scc-hostpath system:serviceaccount:<service_account_name>
+##### or
+     oc adm policy add-scc-to-group hostpath system:authenticated
      
 --------------------------------------------------------------------------------------------------------------------------------
 
