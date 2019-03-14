@@ -35,7 +35,7 @@ Run:
 ## Associate the pod's service account with the above security context
 Run:
    - oc adm policy add-scc-to-user scc-hostpath system:serviceaccount:<service_account_name>
-or
+### or
    - oc adm policy add-scc-to-group hostpath system:authenticated
      
 --------------------------------------------------------------------------------------------------------------------------------
