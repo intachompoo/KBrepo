@@ -1,6 +1,6 @@
-#### Allow hostPath ####
+# Allow hostPath
 
-Openshift requires special permissions for in order to allow pods to use volumes in nodes.
+## Openshift requires special permissions for in order to allow pods to use volumes in nodes.
 
 Do the following:
 
