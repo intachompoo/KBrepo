@@ -1,5 +1,4 @@
 # Allow hostPath
-
 ## Openshift requires special permissions for in order to allow pods to use volumes in nodes.
 
 Do the following:
@@ -40,8 +39,7 @@ Run:
    - oc adm policy add-scc-to-group hostpath system:authenticated
      
      
-  ------------------------------------------------------------------------------------------------------------------
 ## Add the service account to the privileged SCC ####
    - oc adm policy add-scc-to-user privileged system:serviceaccount:myproject:mysvcacct
   
-  ------------------------------------------------------------------------------------------------------------------
+
