@@ -25,8 +25,8 @@ Create standard security-context yaml:
     - my-admin-group
     
     ######################################
-    
-     - oc create -f scc-hostpath.yaml
+Run:
+  - oc create -f scc-hostpath.yaml
 
 ## Add the "allowHostDirVolumePlugin" privilege to this security-context:
 Run:
