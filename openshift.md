@@ -40,6 +40,6 @@
 
 # Allow container run as privileged.
 ## Add the service account to the privileged SCC
-   - oc adm policy add-scc-to-user privileged system:serviceaccount:myproject:mysvcacct
+    oc adm policy add-scc-to-user privileged system:serviceaccount:myproject:mysvcacct
   
 
