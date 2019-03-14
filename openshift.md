@@ -38,7 +38,9 @@ Run:
    or
    - oc adm policy add-scc-to-group hostpath system:authenticated
      
-     
+--------------------------------------------------------------------------------------------------------------------------------
+
+# Allow container flex privileged
 ## Add the service account to the privileged SCC ####
    - oc adm policy add-scc-to-user privileged system:serviceaccount:myproject:mysvcacct
   
