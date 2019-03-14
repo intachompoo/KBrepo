@@ -1,10 +1,9 @@
 # Allow hostPath
 ## Openshift requires special permissions for in order to allow pods to use volumes in nodes.
 
-Do the following:
-Create standard security-context yaml:
-    
-    ################## scc-hostpath.yaml ####################
+#### Do the following:
+#### Create standard security-context yaml:
+#### File namescc-hostpath.yaml
     
     kind: SecurityContextConstraints
     apiVersion: v1
@@ -24,9 +23,8 @@ Create standard security-context yaml:
     groups:
     - my-admin-group
     
-    ######################################
-Run:
-  - oc create -f scc-hostpath.yaml
+#### Run
+    oc create -f scc-hostpath.yaml
 
 ## Add the "allowHostDirVolumePlugin" privilege to this security-context:
 Run:
