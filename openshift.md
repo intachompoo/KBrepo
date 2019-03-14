@@ -3,8 +3,7 @@
 ## Openshift requires special permissions for in order to allow pods to use volumes in nodes.
 
 Do the following:
-
-    Create standard security-context yaml:
+Create standard security-context yaml:
     
     ################## scc-hostpath.yaml ####################
     
@@ -30,17 +29,17 @@ Do the following:
     
      - oc create -f scc-hostpath.yaml
 
-    Add the "allowHostDirVolumePlugin" privilege to this security-context:
+    ## Add the "allowHostDirVolumePlugin" privilege to this security-context:
 
      - oc patch scc scc-hostpath -p '{"allowHostDirVolumePlugin": true}'
 
-    Associate the pod's service account with the above security context
+    ## Associate the pod's service account with the above security context
 
      - oc adm policy add-scc-to-user scc-hostpath system:serviceaccount:<service_account_name>
      
      
   ------------------------------------------------------------------------------------------------------------------
-  #### Add the service account to the privileged SCC ####
+  # Add the service account to the privileged SCC ####
   oc adm policy add-scc-to-user privileged system:serviceaccount:myproject:mysvcacct
   
   ------------------------------------------------------------------------------------------------------------------
