@@ -1,3 +1,12 @@
+# Basic command
+    git clone http://xxxxxxxxxxxxxxxxx.git
+## After edit or update or new
+    git add .
+    git commit -m "update"
+    git push origin master
+## After git remote have update
+    git pull
+
 # Check new or update file with git fetch
     git fetch
         f469af4..64a7ecb  master     -> origin/master
