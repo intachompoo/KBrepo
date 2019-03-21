@@ -50,3 +50,19 @@
 # docker login after oc login
 ## docker login -p $(oc whoami -t) -u unused docker-registry-default.xxxx.xxxx.com
 
+--------------------------------------------------------------------------------------------------------------------------------
+
+# ETCD 2379: getsockopt: connection refused (Issue: Master service down all)
+## Check etcd cluster-health
+       export `cat /etc/etcd/etcd.conf |grep ETCD_LISTEN_CLIENT_URLS`
+       etcdctl -C ${ETCD_LISTEN_CLIENT_URLS} --ca-file=/etc/etcd/ca.crt --cert-file=/etc/etcd/peer.crt --key-file=/etc/etcd/peer.key cluster-health
+
+## Chcek etcd service staus
+       systemctl status etcd.service
+       
+## Restart services
+        systemctl restart etcd.service
+        systemctl status etcd.service
+        systemctl restart atomic-openshift-master-api
+        systemctl restart atomic-openshift-master-controllers
+        systemctl restart atomic-openshift-node
