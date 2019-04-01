@@ -66,3 +66,22 @@
         systemctl restart atomic-openshift-master-api
         systemctl restart atomic-openshift-master-controllers
         systemctl restart atomic-openshift-node
+        
+--------------------------------------------------------------------------------------------------------------------------------
+
+# Backup and Restore Project
+## Backup project
+    $ oc get -o yaml --export all > project.yaml
+## Backup Object
+    $ for object in rolebindings serviceaccounts secrets imagestreamtags cm egressnetworkpolicies rolebindingrestrictions limitranges resourcequotas pvc templates cronjobs statefulsets hpa deployments replicasets poddisruptionbudget endpoints
+    do
+        oc get -o yaml --export $object > $object.yaml
+    done
+    
+## Restore
+        $ oc new-project <projectname>
+        $ oc create -f project.yaml
+        $ oc create -f secret.yaml
+        $ oc create -f serviceaccount.yaml
+        $ oc create -f pvc.yaml
+        $ oc create -f rolebindings.yaml
