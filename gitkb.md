@@ -17,3 +17,9 @@
 # Check after git pull
     git pull
     git log -n 5 --oneline
+
+---------------------------------------------------------------------------
+
+# Store user pass 2Hr.
+    git config credential.helper store
+    git config --global credential.helper 'cache --timeout 7200'
