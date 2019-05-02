@@ -42,6 +42,13 @@
 ## Add the service account to the privileged SCC
     oc adm policy add-scc-to-user privileged system:serviceaccount:myproject:mysvcacct
 --------------------------------------------------------------------------------------------------------------------------------
+# Run pod as root
+    oc get sa
+    
+    oc adm policy add-scc-to-user anyuid system:serviceaccount:my-project:my-serviceaccout
+    example
+    oc adm policy add-scc-to-user anyuid system:serviceaccount:demodev:default
+
 
 # Delete Evicted pod
 ## oc get pod --all-namespaces | awk '{if ($4=="Evicted") print "oc delete pod " $2 " -n " $1;}' | sh
