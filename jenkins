@@ -1,2 +1,8 @@
-##Kill zombie job
+## Kill zombie job
              
+ Jenkins.instance.getItemByFullName("<build name>")
+                              .getBuildByNumber(<build number>)
+                              .finish(
+                                      hudson.model.Result.ABORTED,
+                                      new java.io.IOException("Aborting build")
+                              );
